@@ -33,6 +33,7 @@ bool GameScene::init()
     m_p1->body->setPosition(Vec2(300,200));
     addChild(m_p1->body);
     
+    scheduleUpdate();
     return true;
 }
 
@@ -56,9 +57,8 @@ bool GameScene::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
 {
     CCLOG("Paddle::onTouchBegan id = %d, x = %f, y = %f", touch->getID(), touch->getLocation().x, touch->getLocation().y);
     
-
-    int targetX = touch->getLocation().x;
-    int targetY = touch->getLocation().y;
+    targetX = touch->getLocation().x;
+    targetY = touch->getLocation().y;
     int bodyX = m_p1->body->getPositionX();
     int bodyY = m_p1->body->getPositionY();
     int way = sqrt((abs((targetX - bodyX)*(targetX-bodyX))) + (abs((targetY - bodyY)*(targetY-bodyY))));
@@ -66,4 +66,14 @@ bool GameScene::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
     m_p1->m_moveTime = way/m_p1->m_moveSpeed;
     m_p1->moveTo(Vec2(targetX,targetY));
     return true;
+}
+
+void GameScene::update(float dt)
+{
+    // stop player action when it's over or so.
+    if(m_p1->body->getPositionX() == targetX && m_p1->body->getPositionY() == targetY)
+    {
+        m_p1->actionOver();
+        targetY--;
+    }
 }

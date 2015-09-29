@@ -34,7 +34,7 @@ Player* Player::getPlayer()
 
 Animation* Player::getWalk()
 {
-    if(m_walk==nullptr)
+//    if(m_walk==nullptr)
     {
         SpriteFrameCache::getInstance()->addSpriteFramesWithFile("role.plist", "role.pvr.ccz");
         Vector<SpriteFrame*> vectors;
@@ -59,6 +59,14 @@ void Player::SetPsprite()
 
 void Player::moveTo(cocos2d::Vec2 position)
 {
+    body->stopAllActions();
     MoveTo* move = MoveTo::create(m_moveTime, position);
-    body->runAction(move);
+    auto actF = Sequence::create(Animate::create(getWalk()), nullptr);
+    FiniteTimeAction *start = Spawn::create(move,actF, NULL);
+    body->runAction(start);
+}
+
+void Player::actionOver()
+{
+    body->stopAllActions();
 }

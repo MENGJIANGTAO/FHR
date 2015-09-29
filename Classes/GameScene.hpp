@@ -16,15 +16,18 @@ USING_NS_CC;
 class GameScene : public Layer
 {
 public:
-    bool init();
+    bool init() override;
     static cocos2d::Scene* createScene();
-    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event) override;
     virtual void onEnter() override;
     virtual void onExit() override;
+    void update(float dt) override;
     CREATE_FUNC(GameScene);
 private:
     Sprite *m_background;
     Player *m_p1;
+    int targetX;
+    int targetY;
 };
 
 #endif /* GameScene_hpp */

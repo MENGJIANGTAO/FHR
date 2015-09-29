@@ -22,6 +22,7 @@ public:
     Animation* getWalk();
     void SetPsprite();
     void moveTo(Vec2 position);
+    void actionOver();
     
     Point m_position;
     Sprite* body;
