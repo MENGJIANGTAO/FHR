@@ -8,7 +8,7 @@
 
 #include "MainmenuScene.hpp"
 #include "VisibleRect.hpp"
-#include "Player.hpp"
+#include "GameScene.hpp"
 USING_NS_CC;
 
 Scene* MainmenuScene::createScene()
@@ -46,5 +46,5 @@ bool MainmenuScene::init()
 
 void MainmenuScene::onStart(cocos2d::Ref *obj)
 {
-    
+    Director::getInstance()->replaceScene(GameScene::createScene());
 }

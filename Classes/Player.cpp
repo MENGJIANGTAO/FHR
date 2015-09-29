@@ -12,6 +12,7 @@ Player* Player::m_player;
 
 Player::Player()
 {
+    SetPsprite();
     m_hp = 100;
     m_mp = 100;
     m_moveSpeed = 10;
@@ -19,7 +20,6 @@ Player::Player()
 
 Player::~Player()
 {
-    
 }
 
 Player* Player::getPlayer()
@@ -28,6 +28,7 @@ Player* Player::getPlayer()
     {
         m_player = new Player();
     }
+    
     return m_player;
 }
 
@@ -48,4 +49,16 @@ Animation* Player::getWalk()
         m_walk->setLoops(-1);
     }
     return m_walk;
+}
+
+void Player::SetPsprite()
+{
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("role.plist", "role.pvr.ccz");
+    body = Sprite::createWithSpriteFrameName("player1-1-1.png");
+}
+
+void Player::moveTo(cocos2d::Vec2 position)
+{
+    MoveTo* move = MoveTo::create(m_moveTime, position);
+    body->runAction(move);
 }

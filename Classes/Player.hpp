@@ -13,21 +13,23 @@
 USING_NS_CC;
 
 
-class Player : Sprite
+class Player
 {
 public:
     Player();
     ~Player();
     static Player* getPlayer();
-    Animation *getWalk();
-    
+    Animation* getWalk();
+    void SetPsprite();
     void moveTo(Vec2 position);
-private:
+    
+    Point m_position;
+    Sprite* body;
     int m_hp;
     int m_mp;
     int m_moveSpeed;
     int m_moveTime;
-    
+private:
     static Player *m_player;
     Animation* m_walk;
     Animation* m_attact;
