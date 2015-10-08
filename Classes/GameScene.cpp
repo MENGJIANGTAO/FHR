@@ -32,7 +32,7 @@ bool GameScene::init()
     m_p1 = Player::getPlayer();
     m_p1->body->setPosition(Vec2(300,200));
     addChild(m_p1->body);
-    
+    addChild(m_p1);
     scheduleUpdate();
     return true;
 }

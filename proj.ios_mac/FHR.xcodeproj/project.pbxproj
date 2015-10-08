@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3026DB251BB4047500C98D57 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3026DB231BB4047500C98D57 /* Player.cpp */; settings = {ASSET_TAGS = (); }; };
+		3052249A1BBBC483008DB094 /* BloodTip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 305224981BBBC483008DB094 /* BloodTip.cpp */; settings = {ASSET_TAGS = (); }; };
 		30963D2B1BB9268400F7772B /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30963D291BB9268400F7772B /* GameScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		30C2AE6D1BB4D7BE008B1BF6 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C2AE6B1BB4D7BE008B1BF6 /* VisibleRect.cpp */; settings = {ASSET_TAGS = (); }; };
 		30C2AE701BB4EFF0008B1BF6 /* MainmenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C2AE6E1BB4EFF0008B1BF6 /* MainmenuScene.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -114,6 +115,8 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3026DB231BB4047500C98D57 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		3026DB241BB4047500C98D57 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		305224981BBBC483008DB094 /* BloodTip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BloodTip.cpp; sourceTree = "<group>"; };
+		305224991BBBC483008DB094 /* BloodTip.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BloodTip.hpp; sourceTree = "<group>"; };
 		30963D291BB9268400F7772B /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		30963D2A1BB9268400F7772B /* GameScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameScene.hpp; sourceTree = "<group>"; };
 		30C2AE6B1BB4D7BE008B1BF6 /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VisibleRect.cpp; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				30C2AE6F1BB4EFF0008B1BF6 /* MainmenuScene.hpp */,
 				30963D291BB9268400F7772B /* GameScene.cpp */,
 				30963D2A1BB9268400F7772B /* GameScene.hpp */,
+				305224981BBBC483008DB094 /* BloodTip.cpp */,
+				305224991BBBC483008DB094 /* BloodTip.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -525,6 +530,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				30963D2B1BB9268400F7772B /* GameScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				3052249A1BBBC483008DB094 /* BloodTip.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,10 +16,15 @@ Player::Player()
     m_hp = 100;
     m_mp = 100;
     m_moveSpeed = 10;
+    tip = BloodTip::create();
+    tip->setProgress(100);
+    this->addChild(tip);
+    scheduleUpdate();
 }
 
 Player::~Player()
 {
+    unscheduleUpdate();
 }
 
 Player* Player::getPlayer()
@@ -69,4 +74,10 @@ void Player::moveTo(cocos2d::Vec2 position)
 void Player::actionOver()
 {
     body->stopAllActions();
+}
+
+void Player::update(float dt)
+{
+    tip->setPositionX(body->getPositionX());
+    tip->setPositionY(body->getPositionY());
 }

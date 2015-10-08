@@ -10,10 +10,12 @@
 #define Life_hpp
 
 #include <cocos2d.h>
+#include "BloodTip.hpp"
+
 USING_NS_CC;
 
 
-class Player
+class Player : public Node
 {
 public:
     Player();
@@ -23,9 +25,11 @@ public:
     void SetPsprite();
     void moveTo(Vec2 position);
     void actionOver();
+    void update(float dt) override;
     
     Point m_position;
     Sprite* body;
+    BloodTip* tip;
     int m_hp;
     int m_mp;
     int m_moveSpeed;
