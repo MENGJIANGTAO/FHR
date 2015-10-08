@@ -15,7 +15,7 @@
 USING_NS_CC;
 
 
-class Player : public Node
+class Player : public Sprite
 {
 public:
     Player();
@@ -28,7 +28,6 @@ public:
     void update(float dt) override;
     
     Point m_position;
-    Sprite* body;
     BloodTip* tip;
     int m_hp;
     int m_mp;

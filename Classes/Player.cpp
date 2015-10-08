@@ -59,25 +59,26 @@ Animation* Player::getWalk()
 void Player::SetPsprite()
 {
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("role.plist", "role.pvr.ccz");
-    body = Sprite::createWithSpriteFrameName("player1-1-1.png");
+    this->initWithSpriteFrameName("player1-1-1.png");
 }
 
 void Player::moveTo(cocos2d::Vec2 position)
 {
-    body->stopAllActions();
+    m_player->stopAllActions();
     MoveTo* move = MoveTo::create(m_moveTime, position);
     auto actF = Sequence::create(Animate::create(getWalk()), nullptr);
     FiniteTimeAction *start = Spawn::create(move,actF, NULL);
-    body->runAction(start);
+    m_player->runAction(start);
 }
 
 void Player::actionOver()
 {
-    body->stopAllActions();
+    m_player->stopAllActions();
 }
 
 void Player::update(float dt)
 {
-    tip->setPositionX(body->getPositionX());
-    tip->setPositionY(body->getPositionY());
+    tip->setPositionX(m_player->getPositionX());
+    tip->setPositionY(m_player->getPositionY());
+
 }

@@ -28,10 +28,9 @@ bool GameScene::init()
     m_background = Sprite::create("image/background.png");
     m_background->setPosition(VisibleRect::Center());
     addChild(m_background);
-    
+
     m_p1 = Player::getPlayer();
-    m_p1->body->setPosition(Vec2(300,200));
-    addChild(m_p1->body);
+    m_p1->setPosition(VisibleRect::Center());
     addChild(m_p1);
     scheduleUpdate();
     return true;
@@ -59,8 +58,8 @@ bool GameScene::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
     
     targetX = touch->getLocation().x;
     targetY = touch->getLocation().y;
-    int bodyX = m_p1->body->getPositionX();
-    int bodyY = m_p1->body->getPositionY();
+    int bodyX = m_p1->getPositionX();
+    int bodyY = m_p1->getPositionY();
     int way = sqrt((abs((targetX - bodyX)*(targetX-bodyX))) + (abs((targetY - bodyY)*(targetY-bodyY))));
     
     m_p1->m_moveTime = way/m_p1->m_moveSpeed;
@@ -71,7 +70,7 @@ bool GameScene::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
 void GameScene::update(float dt)
 {
     // stop player action when it's over or so.
-    if(m_p1->body->getPositionX() == targetX && m_p1->body->getPositionY() == targetY)
+    if(m_p1->getPositionX() == targetX && m_p1->getPositionY() == targetY)
     {
         m_p1->actionOver();
         targetY--;

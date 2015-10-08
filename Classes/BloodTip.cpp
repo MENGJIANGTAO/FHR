@@ -10,7 +10,7 @@
 
 bool BloodTip::init(const char *background, const char *filename)
 {
-//    this->initWithSpriteFrameName(background);
+    this->initWithSpriteFrameName(background);
     ProgressTimer* fill = ProgressTimer::create(Sprite::create(filename));
     this->setFill(fill);
     addChild(_fill);
