@@ -78,7 +78,7 @@ void Player::actionOver()
 
 void Player::update(float dt)
 {
-    tip->setPositionX(m_player->getPositionX());
-    tip->setPositionY(m_player->getPositionY());
+//    tip->setPositionX(this->getPositionX());
+//    tip->setPositionY(this->getPositionY());
 
 }

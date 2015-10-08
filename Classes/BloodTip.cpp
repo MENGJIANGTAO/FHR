@@ -18,6 +18,7 @@ bool BloodTip::init(const char *background, const char *filename)
     _fill->setType(ProgressTimer::Type::BAR);
     _fill->setMidpoint(Point(0.5,0.5));
     _fill->setBarChangeRate(Point(1.0,0));
+    _fill->setPosition(this->getContentSize()/2);
     _fill->setPercentage(100);
     return true;
 }

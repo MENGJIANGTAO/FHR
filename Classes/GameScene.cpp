@@ -31,6 +31,7 @@ bool GameScene::init()
 
     m_p1 = Player::getPlayer();
     m_p1->setPosition(VisibleRect::Center());
+    m_p1->tip->setPosition(240,160);
     addChild(m_p1);
     scheduleUpdate();
     return true;
